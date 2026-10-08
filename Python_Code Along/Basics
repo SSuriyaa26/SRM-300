@@ -1,0 +1,133 @@
+'''name = "Suriyaa"# var for name
+age = 19 # var for age
+print (name) #print statement
+print(type(age)) #get data type
+print(type(name)==str)# comparing
+print(isinstance(name,str))# checks of given obj is an instance of an object
+
+#type casting
+age = float(2)
+print(isinstance(age,float))
+
+#parsing int
+age="20"
+print(type(age))
+age = int(age)
+print(type(age))
+age = str(age)
+print(type(age))
+
+#operators
+# +,-,*,/,%,**,//
+# == ,!= ,>=.<=
+# and not or
+# & |
+# ^(XOR), ~(not),<< shift left ,>> shift right
+# is(identity) ,in(membership)
+
+#ternary operator
+def check(age):
+    return True if age>18 else False
+print(check(5))
+print(check(21))
+
+from curses.ascii import isalpha, isdigit
+
+#string methods
+name="suriyaa"
+print(name.upper())
+name=name.upper()
+print(name.title())
+print(name)
+print(name.lower())
+print(name.isupper())
+
+#common string methods
+
+isalpha()# checks if string only has chars
+isalnum()# checks if string is alpha numeric
+isdigit()# checks for digits
+startsswith()# check if string starts with a specific substr
+endswith()# check if str ends with a specific substr
+replace()# replace a part of the str
+split()# split the given str on a specific character separator
+strip()#remove excess whitespace
+join()#append new letters to str
+find()# find position of a sub str
+
+name ="Be\"au"# the \ allows for ' or " to be added
+print(name)
+name="Be\nau"
+print(name)
+phrase="This is an example for slicing"
+print(phrase[1:5])
+
+#booleans
+# True and False need first letter caps
+
+done = {}# 0 , empty strings , lists , dicts are all false , if they have any value they become true
+if done:
+    print("Yes")
+else:
+    print("No")
+
+any(a,b) # returns true if any 1 is true
+all()#returns true when every val is true
+
+#complex
+num=complex(2,3)
+complex1 = 2+3j
+print (num)
+print(num.real,num.imag)
+print(type(num))
+
+abs()# abs value
+round()#rounds ,precision can also be set
+
+#enums basically a constant for python , immutable consts
+from enum import  Enum
+class State(Enum):
+    INACTIVE=0
+    ACTIVE=1
+
+print(State['ACTIVE'].value)
+print(list(State))
+print(len(State))
+
+#inputs
+name=input("Enter your name")
+print("Your name is:"+name)
+
+# control statements
+# this consts of if statements ,elif,else etc
+
+#lists
+dogs=["Roger",1,False,"Syd"]
+print("Roger" in dogs)
+print(dogs[2])
+dogs[2]= True
+print(dogs)
+#slicing with lists
+print(dogs[1:3])
+print(len(dogs))
+dogs.append("Potato")
+print(dogs)
+dogs.extend(["carrots"])
+print(dogs)
+dogs+="mouse"# missing square brackets causes it to add individual letters
+print (dogs)
+dogs.remove("Potato")
+print(dogs)
+print(dogs.pop())
+print(dogs)#pops like a stack
+dogs.insert(4,"Potato")
+print(dogs)
+nums=[5,12,5,12,56,13,157,]
+#nums.sort()
+print(nums)
+print(sorted(nums))
+'''
+
+
+
+
