@@ -126,8 +126,185 @@ nums=[5,12,5,12,56,13,157,]
 #nums.sort()
 print(nums)
 print(sorted(nums))
+
+#tuples, they are immutable
+names =("Suri","yaa")
+print (names[0])
+print (len(names))
+# it works  similar , has len functions , u can slice it , u can use sorted on it (but not inplace)
+
+#dictionaries , they are hasmaps of python
+tennis ={"Roger":"fedrer"}
+print(tennis["Roger"])
+#.get is similar to .getOrDefault from java
+#.popitem(), removes last items
+#in can be used to check if it exits
+#.keys gets the keys
+#.value gets all the values
+#.items() makes the hasmap into a list
+
+#sets and frozen sets
+names ={"A","B"}
+names2={"A"}
+intersect = names and names2
+union = names | names2
+diffrence = names-names2
+subset or superset = names>names2
+
+#functions , already did basics in RPS game
+#scope: global , local,nested function "non local"
+#closure: a nested function that remembers and retains access to variables from its enclosing (outer) function, even after the outer function has finished executing
+#objects: append and pop for list
+
+items=[1,2,3,4,5]
+print(id(items))
+#loops , for and while loops most of it is known
+for index,item in enumerate(items):
+    print (index,item)
+
+#break and continue
+
+#classes
+
+class Animal:
+    def walk(self):
+        print("Walk")
+class Dog(Animal):
+    def __init__(self,name,age):
+        self.name=name
+        self.age = age
+    def bark(self):
+        print("Woof")
+roger=Dog("Roger",8)
+print(roger.age)
+roger.bark()
+
+#inheritance
+roger.walk()
+
+
+#module
+from  moduletest1 import bark
+bark()
+
+import math
+print(math.sqrt(4))
+
+#accepting arguments
+import  sys
+print(sys.argv)
+
+
+#lamda functions
+
+lambda num:num*2
+
+multiply=lambda  a,b :a*b
+print((multiply(2,4)))
+
+
+# map,filter and reduce
+nums =[1,2,3]
+
+def double(a):
+    return  a*2
+result = map(double,nums)
+print(list(result))
+
+square = lambda  a:a**2
+result = map(square,nums)
+print(list(result))
+result = map(lambda a:a**2,nums)
+print(list(result))
+#filter
+
+result = filter(lambda a:a%2==0,nums)
+print(list(result))
+#reduce
+from functools import  reduce
+expense =[('Dinner',80),('lunch',120)]
+sum=reduce(lambda a,b:a[1]+b[1],expense)
+print(sum)
+
+
+def factorial(n):
+    if n==1:
+        return 1
+    else:
+        return n*factorial(n-1)
+print(factorial(3))
+
+
+#decorator
+def logtime(func):
+    def wrapper():
+        print("Before")
+        val = func()
+        print("After")
+        return val
+    return wrapper
+
+@logtime
+def hello():
+    print("Hello")
+
+hello()
+
+# Docstrings
+class Info:
+    def increment(n):
+        """Increament a number"""
+        return n+1
+
+print((help(Info)))
+#annotation
+
+def increment(n:int)-> int:
+    return n+1
+count:int =0
+
+
+#exceptions
+
+try:
+    result =2/0
+except ZeroDivisionError:
+    print("U cant div by 0")
+
+finally:
+    print("finally")
+
+try:
+    raise Exception('An error!')
+except Exception as error:
+    print(error)
+
+Class DogNotFoundException(Exception):
+    pass
+
+
+#with: implicit exception handling
+
+#pip package installed
+
+# list comptession
+nums=[1,2,3]
+nums_power2=[n**2 for n in nums]
+print(nums_power2)
+
+
+#polymorphism overriding and overloading , example have a eat func on a cat and dog classes , we can call eat on it
+
+#operation overloading
+
+class Dog:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+    def __gt__(self,other):
+     return True if self.age>other.age else False
+roger = Dog("a",5)
+b=Dog("b",6)
+print(roger>b)
 '''
-
-
-
-
